@@ -1,0 +1,165 @@
+/* General */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: hsl(210, 46%, 95%);
+  font-family: "Manrope", sans-serif;
+  color: hsl(217, 19%, 35%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main */
+.main {
+  max-width: 70vw;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 50px hsl(0, 0%, 50%);
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+}
+
+/* Image */
+.image {
+  background-image: url("../images/drawers.jpg");
+  background-size: cover;
+  background-position: center;
+  flex-basis: 40%;
+  border-radius: 1rem 0 0 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .image {
+    padding: 10rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+}
+
+/* Content */
+.content {
+  flex-basis: 60%;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0 1rem 1rem 0;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    border-radius: 0 0 1rem 1rem;
+  }
+}
+
+.content-title {
+  margin-top: 0;
+}
+
+.content-description {
+  color: hsl(214, 17%, 51%);
+  margin-top: 1.5rem;
+}
+
+/* Info */
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.author-avatar {
+  width: 60px;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.author-info * {
+  margin: 0;
+}
+
+.author-info-name {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.author-info-date {
+  font-size: 0.7rem;
+}
+
+.share {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  top: -75px;
+  left: -6.5rem;
+  background-color: hsl(217, 19%, 35%);
+  color: hsl(210, 46%, 95%);
+  padding: 1rem 2rem;
+  min-width: 15rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 10px hsl(0, 0%, 50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in;
+}
+
+.tooltip.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltip::before {
+  position: absolute;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  background-color: hsl(217, 19%, 35%);
+  top: 2.85rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  box-shadow: 3px 3px 5px hsl(0, 0%, 50%);
+}
+
+.tooltip-text {
+  size: 7rem;
+  letter-spacing: 0.3rem;
+}
+
+.tooltip-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.share-icon {
+  padding: 0.8rem;
+  background-color: hsl(210, 46%, 95%);
+  border-radius: 50%;
+  cursor: pointer;
+}
